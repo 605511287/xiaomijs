@@ -65,7 +65,7 @@ body{
 	line-height: 40px;
 	background-color:#424242;
 	position: relative;
-	z-index: 100;
+	z-index: 200;
 }
 .header .shop .shopping{
 	width:315px;
