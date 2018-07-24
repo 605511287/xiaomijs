@@ -1964,6 +1964,7 @@ body{
 	bottom: 0;
 	margin: auto 0;
 	background-image: url('../img/lunbo.png');
+	z-index: 20;
 }
 .box .prev{
 	left: 234px;
@@ -1975,9 +1976,11 @@ body{
 }
 .box .prev:hover{
 	background-position: 0;
+	cursor:pointer;
 }
 .box .next:hover{
 	background-position: -41px;
+	cursor:pointer;
 }
 .box .btn{
 	width: 100px;
@@ -1985,6 +1988,7 @@ body{
 	position: absolute;
 	right: 30px;
 	bottom: 20px;
+	z-index: 20;
 }
 .box .son{
 	width: 6px;

@@ -149,4 +149,93 @@ window.onload=function () {
     x("dapei");
     x("peijian");
     x("zhoubian");
-}
+
+    //轮播图
+    let box1=document.getElementsByClassName("box")[0];
+    let wraper =document.getElementsByClassName("wraper")[0];
+    let img =wraper.getElementsByTagName("a");
+    let prev=box1.getElementsByClassName("prev")[0];
+    let next=box1.getElementsByClassName("next")[0];
+    console.log(prev, next);
+    console.log(img);
+    let num=0;
+    let t=setInterval(move,2000);
+    function move() {
+        num++;
+        if(num==5){
+            img[4].style.zIndex=5;
+            num=0;
+        }
+        img[num].style.zIndex=10;
+        for(let i=0;i<num;i++){
+            img[i].style.zIndex=5;
+        }
+    }
+
+    img.onmouseenter=function () {
+        clearInterval(t);
+    }
+    img.onmouseleave=function () {
+        t=setInterval(move,2000);
+    }
+    next.onclick=function () {
+        move();
+    }
+    prev.onclick=function () {
+        move2()
+    }
+    function move2() {
+        num--;
+        if(num<0){
+            img[0].style.zIndex=5;
+            num=4;
+        }
+        img[num].style.zIndex=10;
+        for(let i=4;i>num;i--){
+            img[i].style.zIndex=5;
+        }
+    }
+    }
+
+/*
+    function move(){
+        num++;
+        if(num==5){
+            img[num-1].style.zIndex=5;
+            num=0;
+           /!* for(let i=0;i<img.length;i++){
+                img[i].style.zIndex=5;
+            }*!/
+        }
+        for(let j=0;j<num;j++){
+            img[j].style.zIndex=5;
+        }
+        img[num].style.zIndex=10;
+
+    }
+    box1.onmouseenter=function () {
+        clearInterval(t);
+    }
+    box1.onmouseleave=function () {
+        t=setInterval(move,2000);
+    }
+    next.onclick=function () {
+        move()
+    }
+    prev.onclick=function () {
+        move2()
+    }
+    function move2() {
+        num--;
+        if(num<0){
+            num=4;
+            for(let i=4;i>=0;i--){
+                img[i].style.zIndex=5;
+            }
+        }
+        for(let j=num;j<img.length;j++){
+            img[j].style.zIndex=5;
+        }
+        img[num].style.zIndex=10;
+    }
+}*/
