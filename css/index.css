@@ -70,7 +70,7 @@ body{
 .header .shop .shopping{
 	width:315px;
 	height:0;
-	background-color: red;
+	background-color: #fff;
 	position: absolute;
 	top:40px;
 	right:0;
@@ -78,6 +78,8 @@ body{
 	/*display: none;*/
 	overflow:hidden;
 	box-shadow: 10px 5px 5px  rgba(20,20,20,0.1);
+	border:1px solid #e0e0e0;
+	box-sizing:border-box ;
 }
 .header .shop a{
 	text-align: center;
@@ -219,11 +221,33 @@ body{
 	left: -61.5px;
 }
 .bigBox .logoBox .search{
-	width: 245px;
+	width: 296px;
 	height: 50px;
-	background-color: green;
 	float: right;
 	margin-top: 25px;
+	position: relative;
+}
+.bigBox .logoBox .search .hotword{
+	position: absolute;
+	top:18px;
+	right:62px;
+}
+.bigBox .logoBox .search a{
+	display: block;
+	float: left;
+	font-size: 12px;
+	padding:0 5px;
+	background-color: #eee;
+	color:#757575;
+	margin-left: 5px;
+}
+.bigBox .logoBox .search input{
+	display: block;
+	width:223px;
+	height:48px;
+	padding:0 10px 1px;
+	border:1px solid #e0e0e0;
+	background-color: #fff;
 }
 .bigBox .lunbo{
 	width: 1226px;
@@ -315,10 +339,53 @@ body{
 .shangou .top1{
 	width:100%;
 	height: 58px;
+
+}
+.shangou .top1 h2{
+	display: block;
+	float: left;
+	height:100%;
 	font-size: 22px;
 	font-weight: 200;
 	line-height: 58px;
 	color: #333;
+}
+.shangou .top1 .more{
+	float: right;
+	width:71px;
+	height:25px;
+	margin-top: 17px;
+}
+.shangou .top1 .more .L-more{
+	width:24px;
+	height:16px;
+	padding:3px 5px ;
+	border:1px solid #e0e0e0;
+	line-height: 16px;
+	margin-right: -1px;
+	float: left;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+}
+.shangou .top1 .more .L-more a{
+	display: block;
+	color:#e0e0e0;
+}
+.shangou .top1 .more .R-more a{
+	display: block;
+	color:#b0b0b0;
+}
+.shangou .top1 .more .R-more{
+	width:24px;
+	height:16px;
+	padding:3px 5px ;
+	border:1px solid #e0e0e0;
+	line-height: 16px;
+	float: left;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
 }
 .shangou .body1{
 	width: 100%;
@@ -347,6 +414,17 @@ body{
 	font-size: 15px;
 	text-align: center;
 	margin-top: 10px;
+}
+.shangou .longList{
+	height:100%;
+	width:992px;
+	float: left;
+	overflow: hidden;
+}
+.shangou .longList ul{
+	width:2728px;
+	height:100%;
+	transition: all 0.5s;
 }
 .shangou .body1 .small{
 	width: 234px;
@@ -1581,13 +1659,151 @@ body{
 	width: 100%;
 	height: 420px;
 }
+.neirong .bigUl {
+	width:1226px;
+	height:420px;
+}
 .neirong .body .small{
 	width: 296px;
-	height: 100%;
+	height: 374px;
 	float: left;
 	background-color: white;
 	margin-left: 14px;
-	transition: all 0.5s
+	transition: all 0.5s;
+	padding-top:45px;
+	position: relative;
+	overflow: hidden;
+}
+.neirong .body .small h2{
+	width:276px;
+	height:24px;
+	margin:0 10px 18px;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	color:#ffac13;
+}
+.neirong .body .small .content{
+	width:296px;
+	height:332px;
+}
+.neirong .content .content-list{
+	width:888px;
+	height:100%;
+	transition: all 0.5s;
+}
+.neirong .content li{
+	width:296px;
+	height:100%;
+	float: left;
+}
+.neirong .content li h4{
+	display: block;
+	margin:0 20px 5px;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 25px;
+	width:256px;
+	height:25px;
+	color:#333;
+	text-align: center;
+}
+.neirong .content li p{
+	display: block;
+	width:200px;
+	height:40px;
+	margin:0 48px 10px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+}
+.neirong .content li p a{
+	color:#b0b0b0;
+}
+.neirong .content li h5{
+	display: block;
+	width:276px;
+	height:21px;
+	margin:0 10px 15px;
+	text-align: center;
+	line-height: 21px;
+	font-weight: normal;
+}
+.neirong .content li h5 a{
+	color:#333;
+}
+.neirong .content li .imgBox{
+	width:216px;
+	height: 154px;
+	margin:0 40px;
+}
+.neirong .content li .imgBox a{
+	width:100%;
+	height:100%;
+	display: block;
+}
+.neirong  .small .cricle{
+	width:100px;
+	height:30px;
+	position: absolute;
+	bottom:15px;
+	left:0;
+	right:0;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.neirong  .small .cricle .btn{
+	width:6px;
+	height:6px;
+	border:2px solid #fff;
+	background-color: #b0b0b0;
+	border-radius: 50%;
+}
+.neirong  .small .cricle .hot{
+	background-color:#fff;
+	border:2px solid #ff6700;
+}
+.neirong .small .button .prev{
+	width:20px;
+	height:24px;
+	padding:12px 0;
+	line-height: 24px;
+	font-size: 18px;
+	background-color: rgba(66,66,66,0.2);
+	color:#fff;
+	position: absolute;
+	top:0;
+	left:0;
+	bottom: 0;
+	margin: auto 0;
+	text-align: center;
+	display: none;
+	font-weight: bold;
+}
+.neirong .small .button .next2{
+	width:20px;
+	height:24px;
+	padding:12px 0;
+	line-height: 24px;
+	font-size: 18px;
+	background-color: rgba(66,66,66,0.2);
+	color:#fff;
+	position: absolute;
+	top:0;
+	right:0;
+	bottom: 0;
+	margin: auto 0;
+	text-align: center;
+	display: none;
+	font-weight: bold;
+}
+.neirong .small:hover .next2, .neirong .small:hover  .prev{
+	display: block;
+}
+.neirong .small .button .next2:hover, .neirong .small .button .prev:hover{
+	background-color: #757575;
 }
 .neirong .body .small:hover{
 	box-shadow: 0 10px 10px 0 rgba(30,30,30,0.5);
@@ -1874,6 +2090,8 @@ body{
 	position: relative;
 	top: 0;
 	left: 0;
+
+	overflow: hidden;
 }
 .box .wraper{
 	width: 100%;
@@ -1884,8 +2102,8 @@ body{
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 1226px;
 }
 .box .nav{
 	width: 234px;
@@ -2000,9 +2218,13 @@ body{
 	margin: 0 5px;
 	transition: all 0.2s;
 }
-.box .son:hover{
-	background-color: rgba(30,30,30,0.4);
+.box .hot{
+	background-color: rgba(255,255,255,0.4);
+	border-color: rgba(0,0,0,0.4);
 }
+/*.box .son:hover{*/
+	/*background-color: rgba(30,30,30,0.4);*/
+/*}*/
 /* .left{
 	width: 228px;
 	height: 164px;
@@ -2103,3 +2325,6 @@ body{
 }
  */
 /* 轮播图 */
+
+
+
