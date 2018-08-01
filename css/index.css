@@ -937,7 +937,6 @@ body{
 .jiadian .body .left .small{
 	width: 234px;
 	height: 300px;
-	background-color: blue;
 	transition: all 0.7s;
 }
 .jiadian  .small:hover,.zhineng  .small:hover{
