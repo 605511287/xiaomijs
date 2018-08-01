@@ -27,16 +27,17 @@ window.onload=function () {
         }
     }
 // 主导航选项卡
+    let logoSpace=document.getElementsByClassName("logoSpace")[0]
     let logoBox=document.getElementsByClassName("logoBox")[0];
     console.log(logoBox);
     let nav2=logoBox.getElementsByClassName('nav')[0];
     console.log(nav2);
-    let a=nav2.getElementsByTagName('a');
+    let a=nav2.querySelectorAll('a');
     console.log(a);
     let topCard=logoBox.getElementsByClassName("topCard");
     console.log(topCard);
     console.log(a.length);
-    for (let i=0;i<a.length;i++){
+    for (let i=0;i<a.length-2;i++){
         a[i].onmouseenter=function () {
             topCard[i].style.height='230px';
             topCard[i].style.borderTop="1px solid #b0b0b0";
@@ -44,7 +45,7 @@ window.onload=function () {
         a[i].onmouseleave=function () {
             topCard[i].style.height=0;
             topCard[i].style.borderTop="0px";
-
+            // topCard[i].style.display="none"
         }
     }
     // let sideNav = small.getElementsByClassName("sideNav")[0];
@@ -181,7 +182,9 @@ window.onload=function () {
         smallbtn[now].classList.remove("hot");
         now=next;
     }
+    let pand=true;
     function  leftMove() {
+        pand=false;
         next--;
         if(next==-1){
             next=4;
@@ -199,7 +202,13 @@ window.onload=function () {
         clearInterval(s);
     }
     wraper.onmouseleave=function(){
-        s=setInterval(leftMove,1000);
+        if(!pand){
+            return;
+        }
+        else{
+            s=setInterval(leftMove,1000);
+        }
+       
     }
     lprev.onmouseenter=function(){
         clearInterval(s);
@@ -421,6 +430,57 @@ window.onload=function () {
         }
         uList.style.transform=`translate(${-longWidth*clickTimes}px)`;
     }
+    // 搜索框部分
+    let search=document.querySelector(".search");
+    let searchText=search.querySelector(".searchText");
+    let button=search.querySelector(".button")
+    let hotWord=search.querySelector(".hotword");
+    let searchWord=hotWord.querySelectorAll("a")
+    let searchList=search.querySelector(".searchList");
+    searchText.onclick=function(){
+        searchText.style.borderColor="#ff6700";
+        button.style.borderColor="#ff6700";
+        hotWord.style.display="none";
+        searchList.style.display="block";
+     
+    }
+    searchText.onblur=function(){
+        searchText.style.borderColor="#e0e0e0";
+        button.style.borderColor="#e0e0e0";
+        hotWord.style.display="block";
+        searchList.style.display="none";
+    }
+// 倒计时部分
+    let falshTime=document.querySelector(".falshTime")
+    let smallTime=falshTime.querySelectorAll(".time")
+    runTime();
+    setInterval (runTime,1000);
+    function runTime(){
+        let arr1= djs()
+        smallTime.forEach(function(value,index){
+            if(arr1[index]<10){
+                value.innerText="0"+arr1[index]
+            }
+            else{
+                value.innerText=arr1[index];
+            }
+         
+        })
+    } 
+    function djs(){
+        let arr=[];
+        let nowTime=new Date();
+        let future =new Date("2018.8.3.10:00");
+        let cha =Math.floor((future.getTime()-nowTime.getTime())/1000);
+        let hours=Math.floor(cha/60/60);
+         cha = cha%(60*60)
+        let min =Math.floor(cha/60);
+        let sec =Math.floor(cha%60);
+        arr.push(hours,min,sec);
+        return arr;
+    }
+  
+
 }
 
 /*
