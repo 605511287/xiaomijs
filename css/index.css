@@ -78,11 +78,19 @@ body{
 	transition: all 0.3s;
 	/*display: none;*/
 	overflow:hidden;
-	box-shadow: 10px 5px 5px  rgba(20,20,20,0.1);
-	border:1px solid #e0e0e0;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 	box-sizing:border-box ;
 	text-align: center;
 	color:#424242;
+}
+.header .shop .shopping .loading{
+	width:276px;
+	height:18px;
+	margin:20px auto 20px;
+	padding:20px 0;
+	line-height: 18px;
+	font-size: 12px;
+	color:#b0b0b0;
 }
 .header .shop a{
 	text-align: center;
@@ -230,7 +238,7 @@ body{
 	position: relative;
 }
 .bigBox .logoBox .search:hover .searchText, .bigBox .logoBox .search:hover .button{
-	border-color: #b0b0b0;
+	border:1px solid #b0b0b0;
 }
 .bigBox .logoBox .search .hotword{
 	position: absolute;
@@ -260,17 +268,24 @@ body{
 	border:1px solid #e0e0e0;
 	background-color: #fff;
 	margin-right: -1px;
+	transition: border 0.1s;
 }
 .bigBox .logoBox .search .searchText:focus{
 	outline: none;
 }
 .bigBox .logoBox .search .button{
 	display: block;
+	float: left;
 	width:50px;
-	height:50px;
+	height:48px;
 	border:1px solid #e0e0e0;
-	padding:1px 6px;
 	background-color: #fff;
+	transition: border 0.1s;
+	text-align: center;
+	line-height: 48px;
+}
+.bigBox .logoBox .search .button span{
+
 }
 .bigBox .logoBox .search .searchList{
 	display: none;
@@ -2362,7 +2377,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: rgba(30,30,30,0.3);
+	background-color: rgb(0,0,0,0.8);
 	z-index: 100;
 }
 .box .nav .small{

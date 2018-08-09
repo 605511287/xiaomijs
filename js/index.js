@@ -5,7 +5,7 @@ window.onload=function () {
     console.log(shopping);
     shop.onmouseenter = function () {
         // shopping.style.display='block';
-        shopping.style.height = "100px";
+        shopping.style.height = "98px";
     }
     shop.onmouseleave = function () {
         // shopping.style.display="none";
@@ -200,6 +200,7 @@ window.onload=function () {
     }
     wraper.onmouseenter=function(){
         clearInterval(s);
+        pand=true;
     }
     wraper.onmouseleave=function(){
         if(!pand){
@@ -212,22 +213,53 @@ window.onload=function () {
     }
     lprev.onmouseenter=function(){
         clearInterval(s);
+        pand=true;
     }
     lprev.onmouseleave=function(){
-        s=setInterval(leftMove,1000);
+        if(!pand){
+            return;
+        }
+        else{
+            s=setInterval(leftMove,1000);
+        }
     }
     lnext.onmouseenter=function(){
         clearInterval(s);
+        pand=true;
     }
     lnext.onmouseleave=function(){
-        s=setInterval(leftMove,1000);
+        if(!pand){
+            return;
+        }
+        else{
+            s=setInterval(leftMove,1000);
+        }
     }
     btnbox.onmouseenter=function(){
         clearInterval(s);
+        pand=true;
     }
     btnbox.onmouseleave=function(){
-        s=setInterval(leftMove,1000);
+        if(!pand){
+            return;
+        }
+        else{
+            s=setInterval(leftMove,1000);
+        }
     }
+    nav.onmouseenter=function(){
+        clearInterval(s);
+        pand=true;
+    }
+    nav.onmouseleave=function(){
+        if(!pand){
+            return;
+        }
+        else{
+            s=setInterval(leftMove,1000);
+        }
+    }
+
 
     lprev.onclick=function () {
         if(!flag){
@@ -440,14 +472,18 @@ window.onload=function () {
     searchText.onclick=function(){
         searchText.style.borderColor="#ff6700";
         button.style.borderColor="#ff6700";
-        hotWord.style.display="none";
+        button.style.transform="border 0s"
+        // hotWord.style.display="none";
+        animate(hotWord,{display:"none"},10)
         searchList.style.display="block";
      
     }
     searchText.onblur=function(){
         searchText.style.borderColor="#e0e0e0";
         button.style.borderColor="#e0e0e0";
-        hotWord.style.display="block";
+        // hotWord.style.display="block";
+        animate(hotWord,{display:"block"},10)
+        
         searchList.style.display="none";
     }
 // 倒计时部分
@@ -470,7 +506,7 @@ window.onload=function () {
     function djs(){
         let arr=[];
         let nowTime=new Date();
-        let future =new Date("2018.8.3.10:00");
+        let future =new Date("2018.8.11.10:00");
         let cha =Math.floor((future.getTime()-nowTime.getTime())/1000);
         let hours=Math.floor(cha/60/60);
          cha = cha%(60*60)
