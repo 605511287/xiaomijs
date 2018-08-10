@@ -2,21 +2,16 @@ window.onload=function () {
     // 购物车选项卡
     let shop = document.getElementsByClassName("shop")[0];
     let shopping = document.getElementsByClassName("shopping")[0];
-    console.log(shopping);
     shop.onmouseenter = function () {
-        // shopping.style.display='block';
         shopping.style.height = "98px";
     }
     shop.onmouseleave = function () {
-        // shopping.style.display="none";
         shopping.style.height = 0;
     }
     // 侧导航选项卡
     let box = document.getElementsByClassName("box")[0];
     let nav = box.getElementsByClassName("nav")[0];
-    console.log(nav);
     let small = nav.getElementsByClassName("small");
-    console.log(small);
     for (let i=0;i<small.length;i++){
         let sideNav=small[i].getElementsByClassName("sideNav")[0];
         small[i].onmouseenter=function () {
@@ -26,46 +21,32 @@ window.onload=function () {
             sideNav.style.display="none";
         }
     }
-// 主导航选项卡
+    // 主导航选项卡
     let logoSpace=document.getElementsByClassName("logoSpace")[0]
     let logoBox=document.getElementsByClassName("logoBox")[0];
-    console.log(logoBox);
     let nav2=logoBox.getElementsByClassName('nav')[0];
-    console.log(nav2);
     let a=nav2.querySelectorAll('a');
-    console.log(a);
     let topCard=logoBox.getElementsByClassName("topCard");
-    console.log(topCard);
-    console.log(a.length);
     for (let i=0;i<a.length-2;i++){
         a[i].onmouseenter=function () {
-            topCard[i].style.height='230px';
-            topCard[i].style.borderTop="1px solid #b0b0b0";
+            // topCard[i].style.height='230px';
+            // topCard[i].style.borderTop="1px solid #b0b0b0";
+            topCard[i].style.display='block';
+            
         }
         a[i].onmouseleave=function () {
-            topCard[i].style.height=0;
-            topCard[i].style.borderTop="0px";
-            // topCard[i].style.display="none"
+            // topCard[i].style.height=0;
+            // topCard[i].style.borderTop="0px";
+            topCard[i].style.display='none';
         }
     }
-    // let sideNav = small.getElementsByClassName("sideNav")[0];
-    // console.log(sideNav);
-    // small.onmouseenter=function () {
-    //     sideNav.style.display="block";
-    // }
-    // small.onmouseleave=function () {
-    //     sideNav.style.display="none";
-    // }
+
 
     //家电选项卡
     let jiadian=document.getElementsByClassName('jiadian')[0];
-    console.log(jiadian);
     let nav1=jiadian.getElementsByClassName("nav")[0];
-    console.log(nav1);
     let span=nav1.getElementsByTagName("span");
-    console.log(span);
     let tabCat=jiadian.getElementsByClassName("tabCat");
-    console.log(tabCat);
     for(let i=0;i<tabCat.length;i++){
         span[i].onmouseenter=function () {
         for(let j=0;j<tabCat.length;j++) {
@@ -75,41 +56,16 @@ window.onload=function () {
             span[i].className="enter";
             tabCat[i].style.cursor="default";
 
-        }
+            }
         }
     }
-// 函数封装
-/* function tab(mn){
-    /!* let n=document.getElementsByClassName('mn')[0];
-     console.log(n);*!/
-     let nav1=n.getElementsByClassName("nav")[0];
-     console.log(nav1);
-     let span=nav1.getElementsByTagName("span");
-     console.log(span);
-     let tabCat=n.getElementsByClassName("tabCat");
-     console.log(tabCat);
-     for(let i=0;i<tabCat.length;i++){
-         span[i].onmouseenter=function () {
-             for(let j=0;j<tabCat.length;j++) {
-                 tabCat[j].style.display="none";
-                 span[j].className="leave";
-                 tabCat[i].style.display = "block";
-                 span[i].className="enter";
-             }
-         }
-     }
- }*/
+
  // 调用函数
     let n=document.getElementsByClassName("zhineng")[0]
     function tab(mn){
-    /* let n=document.getElementsByClassName('mn')[0];
-     console.log(n);*/
      let nav1=mn.getElementsByClassName("nav")[0];
-     console.log(nav1);
      let span=nav1.getElementsByTagName("span");
-     console.log(span);
      let tabCat=mn.getElementsByClassName("tabCat");
-     console.log(tabCat);
      for(let i=0;i<tabCat.length;i++){
          span[i].onmouseenter=function () {
              for(let j=0;j<tabCat.length;j++) {
@@ -129,11 +85,8 @@ window.onload=function () {
     function x(name) {
       let q =document.getElementsByClassName(name)[0];
         let nav1=q.getElementsByClassName("nav")[0];
-        console.log(nav1);
         let span=nav1.getElementsByTagName("span");
-        console.log(span);
         let tabCat=q.getElementsByClassName("tabCat");
-        console.log(tabCat);
         for(let i=0;i<tabCat.length;i++){
             span[i].onmouseenter=function () {
                 for(let j=0;j<tabCat.length;j++) {
@@ -153,20 +106,15 @@ window.onload=function () {
 
     //轮播图
     let wraper=document.querySelector(".wraper");
-    console.log(wraper);
     let img=document.querySelectorAll(".wraper a");
-    console.log(img);
     let imgwidth=parseInt(getComputedStyle(img[0],null).width);
-    console.log(imgwidth);
     let now=0,next=0;
     let smallbtn=document.querySelectorAll(".btn .son");
-    console.log(smallbtn);
     let lprev=document.querySelector(".prev");
     let lnext=document.querySelector(".next")
     let btnbox=document.querySelector(".btn");
     let s=setInterval(leftMove,1000);
     let flag=true;
-    console.log(lprev, lnext);
 
     function rightMove() {
         next++;
@@ -299,58 +247,16 @@ window.onload=function () {
 
         }
     }
-    // let num=0;
-    // let t=setInterval(move,2000);
-    // function move() {
-    //     num++;
-    //     if(num==5){
-    //         img[4].style.zIndex=5;
-    //         num=0;
-    //     }
-    //     img[num].style.zIndex=10;
-    //     for(let i=0;i<num;i++){
-    //         img[i].style.zIndex=5;
-    //     }
-    // }
-    //
-    // img.onmouseenter=function () {
-    //     clearInterval(t);
-    // }
-    // img.onmouseleave=function () {
-    //     t=setInterval(move,2000);
-    // }
-    // next.onclick=function () {
-    //     move();
-    // }
-    // prev.onclick=function () {
-    //     move2()
-    // }
-    // function move2() {
-    //     num--;
-    //     if(num<0){
-    //         img[0].style.zIndex=5;
-    //         num=4;
-    //     }
-    //     img[num].style.zIndex=10;
-    //     for(let i=4;i>num;i--){
-    //         img[i].style.zIndex=5;
-    //     }
-    // }
     //内容部分
 
     let content=document.querySelectorAll(".content-list");
     let list=content[0].querySelectorAll(" li");
-    console.log(list);
     let widths=parseInt(getComputedStyle(content[0],null).width)/3;
-    console.log(widths);
     let times=0;
     let cprev=document.querySelectorAll(".small .prev");
     let cnext=document.querySelectorAll(".small .next2");
     let cricle=document.querySelectorAll(".cricle");
-    console.log(cricle);
     let btn=cricle[0].querySelectorAll(".cricle .btn");
-    console.log(btn);
-    console.log(cprev[0],cnext[0]);
     cnext[0].onclick=function () {
         times++;
         if(times>2){
@@ -390,10 +296,6 @@ window.onload=function () {
     let btn1=cricle[1].querySelectorAll(".btn");
     let btn2=cricle[2].querySelectorAll(".btn");
     let btn3=cricle[3].querySelectorAll(".btn");
-    console.log(btn1);
-    console.log(btn2);
-    console.log(btn3);
-
     function up(rename,rename2,rename3,rename4) {
         let Ntime=0;
         rename.onclick = function () {
@@ -438,14 +340,14 @@ window.onload=function () {
 
     //闪购部分
     let longList=document.querySelector(".longList");
-    console.log(longList);
     let longWidth=parseInt(getComputedStyle(longList,null).width);
-    console.log(longWidth);
     let LeftBtn=document.querySelector(".L-more");
     let rightBtn=document.querySelector(".R-more");
     let uList=document.querySelector(".longList ul");
+    let Lefta=document.querySelector(".L-more a");
+    let Righta=document.querySelector(".R-more a");
+    console.log(Lefta)
     let clickTimes=0;
-    console.log(LeftBtn, rightBtn,uList);
     LeftBtn.onclick=function () {
         clickTimes--;
         if(clickTimes<0){
@@ -458,9 +360,20 @@ window.onload=function () {
         clickTimes++;
         if(clickTimes>2){
             clickTimes=2;
+            Righta.style.color="#e0e0e0";
             return;
-        }
+        }       
         uList.style.transform=`translate(${-longWidth*clickTimes}px)`;
+    }
+    LeftBtn.onmouseenter=function(){
+        if(clickTimes==0){
+            Lefta.style.color="#e0e0e0";
+            return
+        }
+        else{
+            Lefta.style.color="#ff6700";
+            console.log(1)
+        }    
     }
     // 搜索框部分
     let search=document.querySelector(".search");
@@ -473,7 +386,6 @@ window.onload=function () {
         searchText.style.borderColor="#ff6700";
         button.style.borderColor="#ff6700";
         button.style.transform="border 0s"
-        // hotWord.style.display="none";
         animate(hotWord,{display:"none"},10)
         searchList.style.display="block";
      
@@ -481,9 +393,7 @@ window.onload=function () {
     searchText.onblur=function(){
         searchText.style.borderColor="#e0e0e0";
         button.style.borderColor="#e0e0e0";
-        // hotWord.style.display="block";
         animate(hotWord,{display:"block"},10)
-        
         searchList.style.display="none";
     }
 // 倒计时部分
@@ -519,48 +429,3 @@ window.onload=function () {
 
 }
 
-/*
-    function move(){
-        num++;
-        if(num==5){
-            img[num-1].style.zIndex=5;
-            num=0;
-           /!* for(let i=0;i<img.length;i++){
-                img[i].style.zIndex=5;
-            }*!/
-        }
-        for(let j=0;j<num;j++){
-            img[j].style.zIndex=5;
-        }
-        img[num].style.zIndex=10;
-
-    }
-    box1.onmouseenter=function () {
-        clearInterval(t);
-    }
-    box1.onmouseleave=function () {
-        t=setInterval(move,2000);
-    }
-    next.onclick=function () {
-        move()
-    }
-    prev.onclick=function () {
-        move2()
-    }
-    function move2() {
-        num--;
-        if(num<0){
-            num=4;
-            for(let i=4;i>=0;i--){
-                img[i].style.zIndex=5;
-            }
-        }
-        for(let j=num;j<img.length;j++){
-            img[j].style.zIndex=5;
-        }
-        img[num].style.zIndex=10;
-    }
-
-
-
-}*/
